@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Docebo Accordion demo page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="public/js/accordion-dist.js"></script>
+</head>
+<body>
+
+    <div class="header">
+
+        <h1>Accordion demo page</h1>
+
+    </div>
+
+    <div id="my-accordion"></div>
+
+    <script type="text/javascript">
+
+        var options = {
+            container: 'my-accordion',
+            mainTitle: 'My accordion title',
+            panels: [
+                {
+                    title: 'My profile',
+                    subtitle: 'Update your profile information',
+                    content: '<p>HTML content for this panel 1</p>'
+                },
+                {
+                    title: 'Change password',
+                    subtitle: 'Change your login password',
+                    content: '<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+                },
+                {
+                    title: 'Preferences',
+                    content: '<p>HTML content for this panel 3</p><p>Another paragraph</p>'
+                },
+                {
+                    title: 'Change password',
+                    subtitle: 'Change your login password',
+                    content: '<p>HTML content for this panel 4</p>'
+                }
+            ]
+        };
+
+        var accordion = new Accordion(options);
+
+        accordion.start();
+
+    </script>
+
+</body>
+</html>
