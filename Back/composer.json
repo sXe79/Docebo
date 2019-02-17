@@ -1,0 +1,21 @@
+{
+  "name": "sxe/docebo",
+  "description": "Test ",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Sarho Principato",
+      "email": "sarho.principato@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require-dev": {
+  },
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Docebo\\": "classes/"
+    }
+  }
+}
