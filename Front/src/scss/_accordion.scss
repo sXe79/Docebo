@@ -1,112 +1,91 @@
+@import 'variables';
+
 #my-accordion
 {
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 2);
+    box-shadow : 0 2px 3px rgba(0, 0, 0, 2);
 
     i
     {
-        font-size: 26px;
-        color: $blue;
-        right: 0;
-        position: absolute;
-        margin: 0 25px;
-        transition: $speed;
-        //top: 50%;
-        //transform: translateY(-50%);
+        font-size  : 26px;
+        color      : $blue;
+        right      : 0;
+        position   : absolute;
+        margin     : 10px $common_spacer 0 $common_spacer;
+        transition : $speed;
     }
-
-
 
     h1
     {
-        font-size: 18px;
-        color: $col1;
-
-        margin: 0;
-
-        line-height: 60px;
-        white-space: nowrap;
-
-        height: 60px;
-        padding: 0 $var1;
-        background-color: white;
-        box-shadow: $shadow;
-        border-bottom: 1px solid #e4e6e5;
+        font-size        : 18px;
+        color            : $dark_gray;
+        margin           : 0;
+        line-height      : 60px;
+        white-space      : nowrap;
+        height           : 60px;
+        padding          : 0 $common_spacer;
+        background-color : white;
+        box-shadow       : $shadow;
+        border-bottom    : 1px solid #e4e6e5;
     }
 
     div.panels-wrapper
     {
         .panel
         {
-            padding: 0 $var1;
-            border-bottom: 1px solid #e4e6e5;
-            cursor: pointer;
-            background-color: white;
-            position: relative;
-            overflow: hidden;
-            transition: all $speed ease-out;
-            box-shadow: $shadow;
-            min-height: 50px;
+            padding          : 0 $common_spacer;
+            border-bottom    : 1px solid #e4e6e5;
+            cursor           : pointer;
+            background-color : white;
+            position         : relative;
+            overflow         : hidden;
+            transition       : all $speed ease-out;
+            box-shadow       : $shadow;
+            min-height       : 50px;
 
             h2
             {
-                font-size: 14px;
-                color: $blue;
-                margin-bottom: 12px;
+                font-size     : 14px;
+                color         : $blue;
+                margin-bottom : 12px;
             }
 
             h3
             {
-                font-size: 12px;
-                color: #999;
+                font-size : 12px;
+                color     : #999;
             }
 
             p
             {
-                font-size: 13px;
-                color: $col1;
-                margin: 0;
-                height: 0;
-                overflow: hidden;
-                opacity: 0;
-                transition: all $speed ease-out;
+                font-size  : 13px;
+                color      : $dark_gray;
+                margin     : 0;
+                height     : 0;
+                overflow   : hidden;
+                opacity    : 0;
+                transition : all $speed ease-out;
             }
-
-            // TMP
-            a
-            {
-                position: absolute;
-                right: 0;
-            }
-
-            a:after {
-                content: 'ˆ';
-                font-size: 30px;
-                color: #777;
-                font-weight: bold;
-                float: right;
-                margin-left: 5px;
-              }
         }
 
         .active
         {
-            margin: $var2 0;
-            transition: margin $speed linear;
-            box-shadow: $shadow;
+            margin     : $extra_spacer 0;
+            transition : margin $speed linear;
+            box-shadow : $shadow;
 
             i
             {
-                transition: 0.70s;
-                transform: rotate(180deg);
+                transition : 0.70s;
+                transform  : rotate(180deg);
             }
 
             h3,
             p
             {
-                margin-bottom: $var1;
-                height: auto;
-                opacity: 1;
-                transition: all $speed ease-out;
+                margin-bottom : $common_spacer;
+                height        : auto;
+                opacity       : 1;
+                transition    : all $speed ease-out;
             }
         }
     }

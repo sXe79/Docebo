@@ -7,12 +7,11 @@ function Accordion(options)
 
 Accordion.prototype.start = function()
 {
-	var target = document.getElementById(this.container)
-		panels_n = this.panels.length;
+	const target = document.getElementById(this.container);
 
 	if(this.mainTitle)
 	{
-		var main_title = document.createElement('h1');
+		const main_title = document.createElement('h1');
 		main_title.className = 'accordion-main-title';
 		main_title.innerHTML = this.mainTitle;
 		target.appendChild(main_title);
@@ -25,36 +24,36 @@ Accordion.prototype.start = function()
 
 		this.panels.forEach(function(panel, index)
 		{
-			var item       = document.createElement('div');
+			let item       = document.createElement('div');
 			item.className = 'panel';
 
-			var expand = document.createElement('i');
+			let expand = document.createElement('i');
 			expand.className = 'material-icons';
 			expand.innerHTML = 'expand_more';
 			item.appendChild(expand);
 
-			var title       = document.createElement('h2');
+			let title       = document.createElement('h2');
 			title.className = 'panel-title';
 			title.innerHTML = panel.title;
 			item.appendChild(title);
 
 			if(panel.subtitle)
 			{
-				var subtitle       = document.createElement('h3');
+				let subtitle       = document.createElement('h3');
 				subtitle.className = 'panel-subtitle';
 				subtitle.innerHTML = panel.subtitle;
 				item.appendChild(subtitle);
 			}
 
-			var panel_content = document.createElement('div');
+			let panel_content = document.createElement('div');
 				panel_content.className = 'panel-content';
 
-			var doc           = new DOMParser(),
-				nodes         = doc.parseFromString(panel.content, 'text/html'),
-				nodes       = nodes.body.childNodes;
+			let doc            = new DOMParser(),
+				nodes          = doc.parseFromString(panel.content, 'text/html'),
+				filtered_nodes = nodes.body.childNodes;
 
 			// Converto i nodi in array
-			let content = Array.from(nodes);
+			let content = Array.from(filtered_nodes);
 
 			content.forEach(function(item)
 			{
@@ -69,8 +68,6 @@ Accordion.prototype.start = function()
 
 				for(let i = 0; i < elements.length; i++)
 				{
-					var arrow = this.getElementsByTagName("i")[0];
-
 					if(this === elements[i])
 					{
 						this.classList.toggle("active")
@@ -89,4 +86,4 @@ Accordion.prototype.start = function()
 	}
 
 	target.appendChild(panels_wrapper);
-}
+};
