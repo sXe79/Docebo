@@ -22,12 +22,13 @@ Accordion.prototype.start = function()
 		var panels_wrapper = document.createElement('div');
 		panels_wrapper.className = 'panels-wrapper';
 
+		// Creo il contenuto dei pannelli
 		this.panels.forEach(function(panel, index)
 		{
 			let item       = document.createElement('div');
 			item.className = 'panel';
 
-			let expand = document.createElement('i');
+			let expand       = document.createElement('i');
 			expand.className = 'material-icons';
 			expand.innerHTML = 'expand_more';
 			item.appendChild(expand);
@@ -45,7 +46,7 @@ Accordion.prototype.start = function()
 				item.appendChild(subtitle);
 			}
 
-			let panel_content = document.createElement('div');
+			let panel_content           = document.createElement('div');
 				panel_content.className = 'panel-content';
 
 			let doc            = new DOMParser(),
@@ -62,6 +63,7 @@ Accordion.prototype.start = function()
 
 			item.appendChild(panel_content);
 
+			// Gestione azione dei pannelli dell'accordion
 			item.addEventListener("click", function()
 			{
 				let elements = panels_wrapper.children;
@@ -81,6 +83,7 @@ Accordion.prototype.start = function()
 				}
 			});
 
+			// Inserisco il pannello (item) nel div contenitore
 			panels_wrapper.appendChild(item);
 		 });
 	}
