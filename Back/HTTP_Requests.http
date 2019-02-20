@@ -1,0 +1,32 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+## Italiano
+GET http://docebo.local/api.php?node_id=2&language=italian
+
+###
+
+## Inglese
+GET http://docebo.local/api.php?node_id=11&language=english&search_keyword=america
+
+###
+
+##Nessun dato trovato
+GET http://docebo.local/api.php?node_id=11&language=italian&search_keyword=docebo&page_num=2&page_size=4
+
+###
+
+## Invalid data - Node ID
+GET http://docebo.local/api.php?node_id=aa&language=italian&search_keyword=docebo&page_num=2&page_size=4
+
+###
+
+## Invalid data - Language
+GET http://docebo.local/api.php?node_id=11&language=spanish&search_keyword=docebo&page_num=2&page_size=4
+
+###
+
